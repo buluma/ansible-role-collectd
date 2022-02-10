@@ -69,3 +69,7 @@ testing:
 galaxy:
   script:
     - ansible-galaxy role info buluma.collectd
+
+test_role:
+  script:
+    - ansible-galaxy install buluma.collectd
