@@ -4,7 +4,7 @@ Install and configure collectd on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-collectd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-collectd/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-collectd/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-collectd)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/collectd)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/collectd)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/releases/)|
+|[![github](https://github.com/buluma/ansible-role-collectd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-collectd/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-collectd/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-collectd)|[![quality](https://img.shields.io/ansible/quality/58008)](https://galaxy.ansible.com/buluma/collectd)|[![downloads](https://img.shields.io/ansible/role/d/58008)](https://galaxy.ansible.com/buluma/collectd)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
