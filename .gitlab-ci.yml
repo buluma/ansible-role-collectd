@@ -22,8 +22,6 @@ molecule:
     matrix:
       - image: "alpine-openrc"
         tag: "latest"
-      - image: "amazonlinux"
-        tag: "latest"
       - image: "enterpriselinux"
         tag: "latest"
       - image: "debian-systemd"
@@ -52,8 +50,6 @@ testing:
   parallel:
     matrix:
       - image: "alpine-openrc"
-        tag: "latest"
-      - image: "amazonlinux"
         tag: "latest"
       - image: "enterpriselinux"
         tag: "latest"
