@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.8](https://github.com/buluma/ansible-role-collectd/tree/1.0.8) (2022-09-11)
+
+[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/1.0.7...1.0.8)
+
 ## [1.0.7](https://github.com/buluma/ansible-role-collectd/tree/1.0.7) (2022-06-25)
 
 [Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/1.0.6...1.0.7)
