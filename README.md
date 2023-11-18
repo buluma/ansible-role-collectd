@@ -1,10 +1,10 @@
-# [collectd](#collectd)
+# [Ansible role collectd](#collectd)
 
 Install and configure collectd on your system.
 
-|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|---------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-collectd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-collectd/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-collectd/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-collectd)|[![quality](https://img.shields.io/ansible/quality/58008)](https://galaxy.ansible.com/buluma/collectd)|[![downloads](https://img.shields.io/ansible/role/d/58008)](https://galaxy.ansible.com/buluma/collectd)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/pulls/)|
+|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-collectd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-collectd/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-collectd/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-collectd)|[![downloads](https://img.shields.io/ansible/role/d/4669)](https://galaxy.ansible.com/buluma/collectd)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/pulls/)|
 
 ## [Example Playbook](#example-playbook)
 
