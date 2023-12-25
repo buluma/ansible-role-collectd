@@ -1,8 +1,23 @@
 # Changelog
 
-## [v1.0.9](https://github.com/buluma/ansible-role-collectd/tree/v1.0.9) (2023-05-05)
+## [Unreleased](https://github.com/buluma/ansible-role-collectd/tree/HEAD)
 
-[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/1.0.8...v1.0.9)
+[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/2.0.0...HEAD)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#15](https://github.com/buluma/ansible-role-collectd/issues/15)
+- Update action [\#14](https://github.com/buluma/ansible-role-collectd/issues/14)
+- rebuild action [\#13](https://github.com/buluma/ansible-role-collectd/issues/13)
+
+## [2.0.0](https://github.com/buluma/ansible-role-collectd/tree/2.0.0) (2023-11-18)
+
+[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/1.0.8...2.0.0)
+
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#12](https://github.com/buluma/ansible-role-collectd/issues/12)
+- Update action [\#11](https://github.com/buluma/ansible-role-collectd/issues/11)
 
 ## [1.0.8](https://github.com/buluma/ansible-role-collectd/tree/1.0.8) (2022-09-11)
 
