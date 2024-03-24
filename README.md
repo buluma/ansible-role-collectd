@@ -355,12 +355,12 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[Alpine](https://hub.docker.com/repository/docker/buluma/alpine/general)|all|
-|[EL](https://hub.docker.com/repository/docker/buluma/enterpriselinux/general)|8|
-|[Debian](https://hub.docker.com/repository/docker/buluma/debian/general)|bullseye|
-|[Fedora](https://hub.docker.com/repository/docker/buluma/fedora/general)|all|
-|[opensuse](https://hub.docker.com/repository/docker/buluma/opensuse/general)|all|
-|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|focal, bionic|
+|[Alpine](https://hub.docker.com/r/buluma/alpine)|all|
+|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|8|
+|[Debian](https://hub.docker.com/r/buluma/debian)|bullseye|
+|[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
+|[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|focal, bionic|
 
 The minimum version of Ansible required is 2.10, tests have been done to:
 
