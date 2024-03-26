@@ -14,8 +14,8 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 ---
 - name: converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
   vars:
     collectd_plugin_logging: logfile
     collectd_basic_plugins:
@@ -87,8 +87,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 ---
 - name: prepare
   hosts: all
-  become: yes
-  gather_facts: no
+  become: true
+  gather_facts: false
 
   roles:
     - role: buluma.bootstrap
@@ -297,7 +297,7 @@ collectd_plugins: []
 #    flush_interval: 600 #seconds
 #    flush_timeout:
 #    config: |4
-#      Something: yes
+#      Something: true
 #      <Nested block>
 #        NestedKey: "value"
 #      </Nested>
@@ -306,7 +306,7 @@ collectd_plugins: []
 #      <Node "oms">
 #         URL "127.0.0.1:26000/oms.collectd"
 #         Format "JSON"
-#         StoreRates yes
+#         StoreRates true
 #      </Node>
 #  - name: postgresql
 #    config: |4
