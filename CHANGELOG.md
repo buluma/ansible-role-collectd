@@ -2,10 +2,25 @@
 
 ## [Unreleased](https://github.com/buluma/ansible-role-collectd/tree/HEAD)
 
-[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/2.2.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/24.3.31...HEAD)
 
 **Merged pull requests:**
 
+- Bump ansible/ansible-lint from 24.12.2 to 25.1.0 [\#35](https://github.com/buluma/ansible-role-collectd/pull/35) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 24.12.1 to 24.12.2 [\#34](https://github.com/buluma/ansible-role-collectd/pull/34) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 24.12.0 to 24.12.1 [\#33](https://github.com/buluma/ansible-role-collectd/pull/33) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 24.10.0 to 24.12.0 [\#32](https://github.com/buluma/ansible-role-collectd/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 24.9.2 to 24.10.0 [\#31](https://github.com/buluma/ansible-role-collectd/pull/31) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 24.9.0 to 24.9.2 [\#29](https://github.com/buluma/ansible-role-collectd/pull/29) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 24.7.0 to 24.9.0 [\#28](https://github.com/buluma/ansible-role-collectd/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [24.3.31](https://github.com/buluma/ansible-role-collectd/tree/24.3.31) (2024-03-30)
+
+[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/2.2.0...24.3.31)
+
+**Merged pull requests:**
+
+- Bump dependabot/fetch-metadata from 1 to 2 [\#27](https://github.com/buluma/ansible-role-collectd/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#24](https://github.com/buluma/ansible-role-collectd/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#23](https://github.com/buluma/ansible-role-collectd/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
 

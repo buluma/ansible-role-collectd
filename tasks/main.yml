@@ -3,7 +3,7 @@
 
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
-  run_once: yes
+  run_once: true
   delegate_to: localhost
 
 - name: Install collectd
@@ -41,7 +41,7 @@
   ansible.builtin.find:
     paths: "{{ collectd_conf_include_dir }}"
     file_type: file
-    patterns: '*.conf'
+    patterns: "*.conf"
   register: collectd_plugins_configured
 
 - name: Configure collectd plugins
@@ -63,4 +63,4 @@
   ansible.builtin.service:
     name: "{{ collectd_service }}"
     state: started
-    enabled: yes
+    enabled: true

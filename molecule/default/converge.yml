@@ -1,8 +1,8 @@
 ---
-- name: converge
+- name: Converge
   hosts: all
-  become: yes
-  gather_facts: yes
+  become: true
+  gather_facts: true
   vars:
     collectd_plugin_logging: logfile
     collectd_basic_plugins:
@@ -64,5 +64,11 @@
             SSLMode "prefer"
             Query tickets
           </Database>
+  pre_tasks:
+    - name: Update apt cache.
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 600
+      when: ansible_os_family == 'Debian'
   roles:
-    - role: ansible-role-collectd
+    - role: buluma.collectd
