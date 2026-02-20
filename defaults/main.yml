@@ -21,8 +21,7 @@ collectd_conf_fnmatch_filters:
   - "*.conf"
 
 collectd_conf_extra:
-
-#### Logging Configuration
+# ### Logging Configuration
 
 collectd_plugin_logging: syslog
 
