@@ -12,7 +12,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: converge
+- name: Converge
   hosts: all
   become: true
   gather_facts: true
@@ -79,7 +79,9 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
           </Database>
   pre_tasks:
     - name: Update apt cache.
-      apt: update_cache=true cache_valid_time=600
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 600
       when: ansible_os_family == 'Debian'
   roles:
     - role: buluma.collectd
@@ -89,7 +91,7 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 
 ```yaml
 ---
-- name: prepare
+- name: Prepare
   hosts: all
   become: true
   gather_facts: false
@@ -129,8 +131,7 @@ collectd_conf_fnmatch_filters:
   - "*.conf"
 
 collectd_conf_extra:
-
-#### Logging Configuration
+# ### Logging Configuration
 
 collectd_plugin_logging: syslog
 
