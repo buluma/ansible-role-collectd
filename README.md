@@ -12,93 +12,93 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-  - name: Converge
-    hosts: all
-    become: true
-    gather_facts: true
-    vars:
-      collectd_plugin_logging: logfile
-      collectd_basic_plugins:
-        - cpu
-        - interface
-        - load
-        - memory
-      collectd_plugins:
-        - name: df
-          config: |
-            MountPoint "/proc"
-            MountPoint "/dev"
-            MountPoint "/\/docker\/containers\//"
-            MountPoint "/\/docker\/devicemapper\//"
-            MountPoint "/\/docker\/plugins\//"
-            MountPoint "/\/docker\/overlay\//"
-            MountPoint "/\/docker\/overlay2\//"
-            MountPoint "/\/docker\/netns\//"
-            FSType "overlay"
-            FSType "proc"
-            FSType "tmpfs"
-            IgnoreSelected true
-            ReportInodes true
-        - name: disk
-          config: |
-            Disk "/^hd"
-            IgnoreSelected true
-        - name: interface
-          config: |
-            Interface "lo"
-            Interface "/veth.*/"
-            IgnoreSelected true
-        - name: swap
-          config: |
-            ReportByDevice false
-            ReportBytes true
-        - name: write_http
-          config: |
-            <Node "test">
-              URL "127.0.0.1:8080/test.collectd"
-              Format "JSON"
-              StoreRates true
-            </Node>
-        - name: postgresql
-          config: |
-            <Query tickets>
-              Statement "SELECT count(t.id) AS count FROM tickets t WHERE t.closed is null;"
-              <Result>
-                Type gauge
-                InstancePrefix "tickets"
-                ValuesFrom "count"
-              </Result>
-            </Query>
-            <Database "test">
-              Host "psql-database.hostname.com"
-              Port "5432"
-              User "my_psqladminuser"
-              Password "my_passwd"
-              SSLMode "prefer"
-              Query tickets
-            </Database>
-    pre_tasks:
-      - name: Update apt cache.
-        ansible.builtin.apt:
-          update_cache: true
-          cache_valid_time: 600
-        when: ansible_os_family == 'Debian'
-    roles:
-      - role: buluma.collectd
+- name: Converge
+  hosts: all
+  become: true
+  gather_facts: true
+  vars:
+    collectd_plugin_logging: logfile
+    collectd_basic_plugins:
+    - cpu
+    - interface
+    - load
+    - memory
+    collectd_plugins:
+    - name: df
+      config: |
+        MountPoint "/proc"
+        MountPoint "/dev"
+        MountPoint "/\/docker\/containers\//"
+        MountPoint "/\/docker\/devicemapper\//"
+        MountPoint "/\/docker\/plugins\//"
+        MountPoint "/\/docker\/overlay\//"
+        MountPoint "/\/docker\/overlay2\//"
+        MountPoint "/\/docker\/netns\//"
+        FSType "overlay"
+        FSType "proc"
+        FSType "tmpfs"
+        IgnoreSelected true
+        ReportInodes true
+    - name: disk
+      config: |
+        Disk "/^hd"
+        IgnoreSelected true
+    - name: interface
+      config: |
+        Interface "lo"
+        Interface "/veth.*/"
+        IgnoreSelected true
+    - name: swap
+      config: |
+        ReportByDevice false
+        ReportBytes true
+    - name: write_http
+      config: |
+        <Node "test">
+          URL "127.0.0.1:8080/test.collectd"
+          Format "JSON"
+          StoreRates true
+        </Node>
+    - name: postgresql
+      config: |
+        <Query tickets>
+          Statement "SELECT count(t.id) AS count FROM tickets t WHERE t.closed is null;"
+          <Result>
+            Type gauge
+            InstancePrefix "tickets"
+            ValuesFrom "count"
+          </Result>
+        </Query>
+        <Database "test">
+          Host "psql-database.hostname.com"
+          Port "5432"
+          User "my_psqladminuser"
+          Password "my_passwd"
+          SSLMode "prefer"
+          Query tickets
+        </Database>
+  pre_tasks:
+  - name: Update apt cache.
+    ansible.builtin.apt:
+      update_cache: true
+      cache_valid_time: 600
+    when: ansible_os_family == 'Debian'
+  roles:
+  - role: buluma.collectd
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-collectd/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-  - name: Prepare
-    hosts: all
-    become: true
-    gather_facts: false
+- name: Prepare
+  hosts: all
+  become: true
+  gather_facts: false
 
-    roles:
-      - role: buluma.bootstrap
-      - role: buluma.epel
+  roles:
+  - role: buluma.bootstrap
+  - role: buluma.epel
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -128,7 +128,7 @@ collectd_conf_writethreads: 5
 
 collectd_conf_include_dir: /etc/collectd.d
 collectd_conf_fnmatch_filters:
-  - "*.conf"
+- "*.conf"
 
 collectd_conf_extra:
 # ### Logging Configuration
@@ -151,10 +151,10 @@ collectd_plugin_syslog_loglevel: "info"
 # Use 'collectd_basic_plugins' to enable plugins not requiring additional
 # configuration.
 collectd_basic_plugins:
-  - cpu
-  - interface
-  - load
-  - memory
+- cpu
+- interface
+- load
+- memory
   # - aggregation
   # - amqp
   # - apache
