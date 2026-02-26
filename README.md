@@ -128,7 +128,7 @@ collectd_conf_writethreads: 5
 
 collectd_conf_include_dir: /etc/collectd.d
 collectd_conf_fnmatch_filters:
-- "*.conf"
+  - "*.conf"
 
 collectd_conf_extra:
 # ### Logging Configuration
@@ -151,10 +151,10 @@ collectd_plugin_syslog_loglevel: "info"
 # Use 'collectd_basic_plugins' to enable plugins not requiring additional
 # configuration.
 collectd_basic_plugins:
-- cpu
-- interface
-- load
-- memory
+  - cpu
+  - interface
+  - load
+  - memory
   # - aggregation
   # - amqp
   # - apache
