@@ -2,9 +2,9 @@
 
 Install and configure collectd on your system.
 
-|GitHub|GitLab|Downloads|Version|
-|------|------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-collectd/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-collectd/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-collectd/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-collectd)|[![downloads](https://img.shields.io/ansible/role/d/buluma/collectd)](https://galaxy.ansible.com/buluma/collectd)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/releases/)|
+|GitHub|Issues|Pull Requests|Version|Downloads|
+|------|------|-------------|-------|---------|
+|[![github](https://github.com/buluma/ansible-role-collectd/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-collectd/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-collectd.svg)](https://github.com/buluma/ansible-role-collectd/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/collectd)](https://galaxy.ansible.com/ui/standalone/roles/buluma/collectd/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -19,72 +19,72 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   vars:
     collectd_plugin_logging: logfile
     collectd_basic_plugins:
-    - cpu
-    - interface
-    - load
-    - memory
+      - cpu
+      - interface
+      - load
+      - memory
     collectd_plugins:
-    - name: df
-      config: |
-        MountPoint "/proc"
-        MountPoint "/dev"
-        MountPoint "/\/docker\/containers\//"
-        MountPoint "/\/docker\/devicemapper\//"
-        MountPoint "/\/docker\/plugins\//"
-        MountPoint "/\/docker\/overlay\//"
-        MountPoint "/\/docker\/overlay2\//"
-        MountPoint "/\/docker\/netns\//"
-        FSType "overlay"
-        FSType "proc"
-        FSType "tmpfs"
-        IgnoreSelected true
-        ReportInodes true
-    - name: disk
-      config: |
-        Disk "/^hd"
-        IgnoreSelected true
-    - name: interface
-      config: |
-        Interface "lo"
-        Interface "/veth.*/"
-        IgnoreSelected true
-    - name: swap
-      config: |
-        ReportByDevice false
-        ReportBytes true
-    - name: write_http
-      config: |
-        <Node "test">
-          URL "127.0.0.1:8080/test.collectd"
-          Format "JSON"
-          StoreRates true
-        </Node>
-    - name: postgresql
-      config: |
-        <Query tickets>
-          Statement "SELECT count(t.id) AS count FROM tickets t WHERE t.closed is null;"
-          <Result>
-            Type gauge
-            InstancePrefix "tickets"
-            ValuesFrom "count"
-          </Result>
-        </Query>
-        <Database "test">
-          Host "psql-database.hostname.com"
-          Port "5432"
-          User "my_psqladminuser"
-          Password "my_passwd"
-          SSLMode "prefer"
-          Query tickets
-        </Database>
+      - name: df
+        config: |
+          MountPoint "/proc"
+          MountPoint "/dev"
+          MountPoint "/\/docker\/containers\//"
+          MountPoint "/\/docker\/devicemapper\//"
+          MountPoint "/\/docker\/plugins\//"
+          MountPoint "/\/docker\/overlay\//"
+          MountPoint "/\/docker\/overlay2\//"
+          MountPoint "/\/docker\/netns\//"
+          FSType "overlay"
+          FSType "proc"
+          FSType "tmpfs"
+          IgnoreSelected true
+          ReportInodes true
+      - name: disk
+        config: |
+          Disk "/^hd"
+          IgnoreSelected true
+      - name: interface
+        config: |
+          Interface "lo"
+          Interface "/veth.*/"
+          IgnoreSelected true
+      - name: swap
+        config: |
+          ReportByDevice false
+          ReportBytes true
+      - name: write_http
+        config: |
+          <Node "test">
+            URL "127.0.0.1:8080/test.collectd"
+            Format "JSON"
+            StoreRates true
+          </Node>
+      - name: postgresql
+        config: |
+          <Query tickets>
+            Statement "SELECT count(t.id) AS count FROM tickets t WHERE t.closed is null;"
+            <Result>
+              Type gauge
+              InstancePrefix "tickets"
+              ValuesFrom "count"
+            </Result>
+          </Query>
+          <Database "test">
+            Host "psql-database.hostname.com"
+            Port "5432"
+            User "my_psqladminuser"
+            Password "my_passwd"
+            SSLMode "prefer"
+            Query tickets
+          </Database>
   pre_tasks:
-  - name: Update apt cache.
-    ansible.builtin.apt:
-      update_cache: true
-      cache_valid_time: 600
-    when: ansible_os_family == 'Debian'
+    - name: Update apt cache.
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 600
+      when: ansible_os_family == 'Debian'
   roles:
-  - role: buluma.collectd
+    - role: buluma.collectd
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-collectd/blob/master/molecule/default/prepare.yml):
@@ -97,8 +97,8 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
   gather_facts: false
 
   roles:
-  - role: buluma.bootstrap
-  - role: buluma.epel
+    - role: buluma.bootstrap
+    - role: buluma.epel
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -341,30 +341,31 @@ collectd_plugins: []
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
-| Requirement | GitHub | GitLab |
-|-------------|--------|--------|
-|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-bootstrap/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-bootstrap)|
-|[buluma.epel](https://galaxy.ansible.com/buluma/epel)|[![Build Status GitHub](https://github.com/buluma/ansible-role-epel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-epel/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-epel/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-epel)|
+| Requirement | GitHub |
+|-------------|--------|
+|[buluma.bootstrap](https://galaxy.ansible.com/buluma/bootstrap)|[![Build Status GitHub](https://github.com/buluma/ansible-role-bootstrap/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-bootstrap/actions)|
+|[buluma.epel](https://galaxy.ansible.com/buluma/epel)|[![Build Status GitHub](https://github.com/buluma/ansible-role-epel/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-epel/actions)|
 
 ## [Context](#context)
 
 This role is part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
 Here is an overview of related roles:
+
 ![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-collectd/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
 
 |container|tags|
 |---------|----|
-|[Alpine](https://hub.docker.com/r/buluma/alpine)|all|
-|[EL](https://hub.docker.com/r/buluma/enterpriselinux)|all|
-|[Debian](https://hub.docker.com/r/buluma/debian)|all|
-|[Fedora](https://hub.docker.com/r/buluma/fedora)|all|
-|[opensuse](https://hub.docker.com/r/buluma/opensuse)|all|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
+|[Alpine](https://hub.docker.com/r/robertdebock/alpine)|all|
+|[EL](https://hub.docker.com/r/robertdebock/enterpriselinux)|all|
+|[Debian](https://hub.docker.com/r/robertdebock/debian)|all|
+|[Fedora](https://hub.docker.com/r/robertdebock/fedora)|all|
+|[opensuse](https://hub.docker.com/r/robertdebock/opensuse)|all|
+|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
 
 The minimum version of Ansible required is 2.10, tests have been done on:
 
@@ -381,3 +382,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
