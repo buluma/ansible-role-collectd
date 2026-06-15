@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-collectd/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/26.6.1...HEAD)
+
+**Merged pull requests:**
+
+- Add plugin dependancy for network plugin [\#30](https://github.com/buluma/ansible-role-collectd/pull/30) ([jordanconway](https://github.com/jordanconway))
+
+## [26.6.1](https://github.com/buluma/ansible-role-collectd/tree/26.6.1) (2026-06-14)
+
+[Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/26.6.0...26.6.1)
+
 ## [26.6.0](https://github.com/buluma/ansible-role-collectd/tree/26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-collectd/compare/24.3.31...26.6.0)
