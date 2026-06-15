@@ -24,6 +24,9 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
       - load
       - memory
     collectd_plugins:
+      - name: network
+        config: |
+          Server 127.0.0.0 25826
       - name: df
         config: |
           MountPoint "/proc"
